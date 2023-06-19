@@ -1,0 +1,100 @@
+:root {
+	--clr-sedan-card: hsl(31, 77%, 52%);
+	--clr-suv-card: hsl(184, 100%, 22%);
+	--clr-luxury-card: hsl(179, 100%, 13%);
+	--clr-neutral-00_75: hsla(0, 0%, 100%, 0.75);
+	--clr-neutral-50: hsl(0, 0%, 95%);
+	--clr-dark-body: hsl(0, 0%, 15%);
+}
+
+
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	box-sizing: border-box;
+	background-color: var(--clr-neutral-50);
+	font-family: 'Lexend Deca', sans-serif;
+	display: grid;
+	place-items: center;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: var(--clr-dark-body);
+	}
+}
+
+button {
+	background-color: var(--clr-neutral-50);
+	border: 0;
+	font-family: inherit;
+	cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: var(--clr-neutral-50);
+	font-family: 'Big Shoulders Display', cursive;
+	margin: 0;
+}
+
+.card-container {
+	display: flex;
+	width: min(90%, 950px);
+	border-radius: .75rem;
+	overflow: hidden;
+}
+
+
+
+.card {
+	padding: 3rem;
+	display: grid;
+	justify-items: start;
+	gap: 2rem;
+}
+
+.title {
+	font-size: 2.5rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.description {
+	color: var(--clr-neutral-00_75);
+	margin: 0;
+	margin-block-end: clamp(1rem, 3vh, 4rem);
+	line-height: 1.5;
+}
+
+button.more-info {
+	color: currentColor;
+	padding: 1rem 2rem;
+    font-size: 15px;
+    border-radius: 50vw;
+	border: 2px solid var(--clr-neutral-50);
+	transition: background-color 150ms ease-out,
+		color 150ms ease-in;
+}
+
+button.more-info:hover {
+	background-color: transparent;
+    color: var(--clr-neutral-50);
+}
+
+@media (max-width: 830px) {
+	.card-container {
+		flex-direction: column;
+		margin-block: 3rem;
+	}
+	.description {
+		margin-bottom: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	button.more-info {
+		transition-duration: 50ms;
+	}
+}
+
